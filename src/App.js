@@ -1,24 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import FormAgregarTarea from './components/FormAgregarTarea';
+import ListaDeTareas from './components/ListaDeTareas';
 
 function App() {
+  const [arrDeTareas, setArrDeTareas] = useState([]);
+
+  const agregarTarea = (obj) => {
+    const newArr = [ ...arrDeTareas, obj ];
+    setArrDeTareas(newArr);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <FormAgregarTarea agregarTarea={ agregarTarea }/>
+      <ListaDeTareas tareas={ arrDeTareas }/>
     </div>
   );
 }
