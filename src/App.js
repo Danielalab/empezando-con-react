@@ -10,6 +10,7 @@ function App() {
       {/* <h1>Creand un contador</h1> */}
       {/* <Contador /> */}
       <ListaDePokemones />
+      
     </main>
   );
 }
