@@ -15,6 +15,7 @@ const FormAgregarTarea = (props) => {
       fecha: new Date()
     };
     props.agregarTarea(objTarea);
+    setText('');
     // console.log(objTarea);
   }
 

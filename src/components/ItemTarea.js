@@ -3,7 +3,7 @@ import React from 'react';
 const ItemTarea = (props) => {
   const obj = props.data;
   return (
-    <li>{ obj.tarea }</li>
+    <li data-testid="item">{ obj.tarea }</li>
   )
 };
 
