@@ -4,9 +4,11 @@ import FormAgregarTarea from '../components/FormAgregarTarea.js';
 import { act } from 'react-dom/test-utils';
 
 it('Deberia limpiar el input al dar click al button', () => {
+  // creando prop 
+
   // renderizando el componente
   const { getByText, getByPlaceholderText } = render(
-    <FormAgregarTarea />
+    <FormAgregarTarea agregarTarea={ (data) => { console.log(data) } }/>
   );
 
   // obteniendo el input por su placeholder
