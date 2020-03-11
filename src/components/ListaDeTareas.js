@@ -5,7 +5,7 @@ import ItemTarea from './ItemTarea';
 const ListaDeTareas = (props) => {
   const tareas = props.tareas;
   return (
-    <ul>
+    <ul data-testid="lista">
       { 
         tareas.map((objTarea, index) => <ItemTarea key={ index } data={ objTarea }/>)
       }
