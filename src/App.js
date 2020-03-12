@@ -1,20 +1,27 @@
 import React, { useState } from 'react';
 import './App.css';
-import FormAgregarTarea from './components/FormAgregarTarea';
-import ListaDeTareas from './components/ListaDeTareas';
+import FormAddTask from './components/FormAddTask';
+import ItemTask from './components/ItemTask';
 
 function App() {
-  const [arrDeTareas, setArrDeTareas] = useState([]);
+  const [ arrOrder, setArrOrder ] = useState([]);
 
-  const agregarTarea = (obj) => {
-    const newArr = [ ...arrDeTareas, obj ];
-    setArrDeTareas(newArr);
-  };
+  const agregarTarea = (objTarea) => {
+    const newArr =  arrOrder.concat([ objTarea ]);
+    setArrOrder(newArr);
+  }
 
   return (
     <div className="App">
-      <FormAgregarTarea agregarTarea={ agregarTarea }/>
-      <ListaDeTareas tareas={ arrDeTareas }/>
+      <FormAddTask agregar={ agregarTarea }/>
+      {
+        arrOrder.length === 0 ?
+         'no hay tareas' :
+        <ul>
+          { arrOrder.map(el => <ItemTask ></ItemTask>)  }
+          
+        </ul>
+      }
     </div>
   );
 }
