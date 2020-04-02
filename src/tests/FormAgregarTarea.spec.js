@@ -29,7 +29,7 @@ describe('FormAgregarTarea', () => {
     
     // verifica input despues de dar click
     expect(input.value).toBe('');
-    expect(agregarTarea.calls.length).toBe(1)
+    expect(agregarTarea).toBeCalled();
   });
   
 
